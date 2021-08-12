@@ -1,0 +1,248 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Customer Project",
+      "description": "Customer Project Application API"
+    },
+    "host": "localhost:4000",
+    "basePath": "/customer",
+    "tags": [
+      {
+        "name": "Customers",
+        "description": "API for customers in the system"
+      }
+    ],
+    "parameters":[
+      {
+        "email":{
+        "name":"email",
+        "in":"query",
+        "type":"string"
+      }
+    }
+    ],
+    "schemes": ["http"],
+    "securityDefinitions":{
+      "bearer":{
+        "type":"apiKey",
+        "name":"authorization",
+        "in":"header"
+      }
+    },
+    "consumes": ["application/json", "application/bjson", "application/xml"],
+    "produces": ["application/json", "application/bjson", "application/xml"],
+    "paths": {
+        "/signup": {
+            "post": {
+              "tags": ["Customers"],
+              "parameters":[
+                {
+                  "name": "name",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                  }                   
+              },
+              {
+                  "name": "gender",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                  }                   
+              },
+              {
+                  "name": "city",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                  }                   
+              },
+              {
+                  "name": "state",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                    }                     
+              },
+              {
+                  "name": "phone",
+                  "in": "query",
+                  "schema": {
+                      "type": "number",
+                      "required":true
+                    }                     
+              },
+              {
+                  "name": "email",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                    }                     
+              },
+              {
+                  "name": "password",
+                  "in": "query",
+                  "schema": {
+                      "type": "string",
+                      "required":true
+                    }                     
+              }
+              ],
+              "summary": "Get customer logged in the system",
+              "responses":{}
+            }
+          },
+        "/login": {
+            "post": {
+              "tags": ["Customers"],
+              "parameters":[
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                      }                     
+                }
+              ],
+              "summary": "Get customer logged in the system",
+              "responses":{}
+            }
+          },
+        "/update": {
+            "post": {
+              "tags": ["Customers"],
+              "parameters":[
+                {
+                    "name": "id",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                },
+                {
+                    "name": "gender",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                },
+                {
+                    "name": "city",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                },
+                {
+                    "name": "state",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                      }                     
+                },
+                {
+                    "name": "phone",
+                    "in": "query",
+                    "schema": {
+                        "type": "number",
+                        "required":true
+                      }                     
+                },
+                {
+                    "name": "email",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                      }                     
+                },
+                {
+                    "name": "password",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                      }                     
+                }
+              ],
+              "summary": "Update customer",
+              "responses":{},
+              "security": [{ "bearer": [] }]
+            }
+          },
+        "/delete": {
+            "put": {
+              "tags": ["Customers"],
+              "parameters":[
+                {
+                    "name": "id",
+                    "in": "query",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }                   
+                }
+              ],
+              "summary": "Update customer",
+              "responses":{},
+              "security": [{ "bearer": [] }]
+            }
+          },
+        "/list": {
+            "get": {
+              "tags": ["Customers"],
+              "summary": "Get list of customers",
+              "description":"",
+              "produces":["application/json"],
+              "responses":{},
+              "security": [{ "bearer": [] }]
+            }
+          },
+        "/getDetails/{id}": {
+            "get": {
+              "tags": ["Customers"],
+              "summary": "Get list of customers",
+              "description":"",
+              "parameters":[
+                {
+                    "name": "id",
+                    "in": "path",
+                    "schema": {
+                        "type": "string",
+                        "required":true
+                    }
+                }
+              ],
+              "responses":{},
+              "security": [{ "bearer": [] }]
+            }
+          }
+        }
+  }
